@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE32A2B21B25F379000BA622 /* TipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32A2B11B25F379000BA622 /* TipesTableViewController.swift */; };
+		CE32A2B41B25FACD000BA622 /* TypesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32A2B31B25FACD000BA622 /* TypesTableViewController.swift */; };
 		DE7834751A2C7ABF007D2210 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7834741A2C7ABF007D2210 /* AppDelegate.swift */; };
 		DE78347C1A2C7ABF007D2210 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE78347A1A2C7ABF007D2210 /* Main.storyboard */; };
 		DE78347E1A2C7ABF007D2210 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE78347D1A2C7ABF007D2210 /* Images.xcassets */; };
@@ -283,7 +283,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CE32A2B11B25F379000BA622 /* TipesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipesTableViewController.swift; sourceTree = "<group>"; };
+		CE32A2B31B25FACD000BA622 /* TypesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypesTableViewController.swift; path = ../TypesTableViewController.swift; sourceTree = "<group>"; };
 		DE78346F1A2C7ABF007D2210 /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7834731A2C7ABF007D2210 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE7834741A2C7ABF007D2210 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -592,10 +592,10 @@
 			isa = PBXGroup;
 			children = (
 				DE7834741A2C7ABF007D2210 /* AppDelegate.swift */,
+				CE32A2B31B25FACD000BA622 /* TypesTableViewController.swift */,
 				DE7834961A2C7C22007D2210 /* RacesTableViewController.swift */,
 				DE7836971A2C8882007D2210 /* WebViewController.swift */,
 				DE78347A1A2C7ABF007D2210 /* Main.storyboard */,
-				CE32A2B11B25F379000BA622 /* TipesTableViewController.swift */,
 				DE78347D1A2C7ABF007D2210 /* Images.xcassets */,
 				DE7834981A2C82DE007D2210 /* pokemons.plist */,
 				DE7836951A2C8306007D2210 /* PokedexModel.swift */,
@@ -1244,11 +1244,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE7834971A2C7C22007D2210 /* RacesTableViewController.swift in Sources */,
-				CE32A2B21B25F379000BA622 /* TipesTableViewController.swift in Sources */,
 				DE7834751A2C7ABF007D2210 /* AppDelegate.swift in Sources */,
 				DE7836921A2C82ED007D2210 /* Race.swift in Sources */,
 				DE7836961A2C8306007D2210 /* PokedexModel.swift in Sources */,
 				DE7836941A2C82F8007D2210 /* Type.swift in Sources */,
+				CE32A2B41B25FACD000BA622 /* TypesTableViewController.swift in Sources */,
 				DE7836981A2C8882007D2210 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

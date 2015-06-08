@@ -1,18 +1,16 @@
 //
-//  RacesTableViewController.swift
+//  TypesTableViewController.swift
 //  Pokedex
 //
-//  Created by Santiago Pavón on 1/12/14.
-//  Copyright (c) 2014 UPM. All rights reserved.
+//  Created by Vaishali Mirchandani on 8/6/15.
+//  Copyright (c) 2015 UPM. All rights reserved.
 //
 
 import UIKit
 
-class RacesTableViewController: UITableViewController {
+class TypesTableViewController: UITableViewController {
 
     lazy var pokedexModel = PokedexModel()
-    
-    var pokemonType: Type?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,30 +38,33 @@ class RacesTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Potentially incomplete method implementation.
+        // Return the number of sections.
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pokemonType!.races.count
+        // #warning Incomplete method implementation.
+        // Return the number of rows in the section.
+        return pokedexModel.types.count
     }
 
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Race Cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Type Cell", forIndexPath: indexPath) as! UITableViewCell
         
-        let race = pokemonType!.races[indexPath.row]
+        let type = pokedexModel.types[indexPath.row]
         
-        cell.imageView?.image = UIImage(named: race.icon)
-        cell.textLabel?.text = race.name
-        cell.detailTextLabel?.text = race.code
-        
+        cell.textLabel?.text = type.name.capitalizedString
+        cell.textLabel
+        cell.detailTextLabel?.text =  String(type.races.count)
         return cell
     }
-
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return pokemonType!.name
+        return "Tipos de Pokemon"
     }
-    
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -99,23 +100,30 @@ class RacesTableViewController: UITableViewController {
     }
     */
 
+    /*
     // MARK: - Navigation
 
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+    }
+    */
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if segue.identifier == "Show Web Info" {
+        if segue.identifier == "Show Pokemon Races" {
             
-            // El destino del segue es el Navigation Controller.
-            // El primer VC apuntado por el Navigation Controller el WebVC.
-            let wvc = (segue.destinationViewController as! UINavigationController).topViewController as! WebViewController
+            // El destino del segue es el Races View Controller.
+            let rvc = segue.destinationViewController as! RacesTableViewController
             
             // sender es la celda de la tabla que disparo el segue.
             if let ip = tableView.indexPathForCell(sender! as! UITableViewCell) {
-                                
-                wvc.race = pokemonType!.races[ip.row]
                 
-                wvc.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-                wvc.navigationItem.leftItemsSupplementBackButton = true
+                rvc.pokemonType = pokedexModel.types[ip.row]
+                
+                rvc.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+                rvc.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }
